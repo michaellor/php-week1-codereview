@@ -13,7 +13,7 @@
         </div>
         <div>
           <label for='addphonenumber'>Phone Number:</label>
-          <input id='addphonenumber' name='addaddphonenumber' type='number'>
+          <input id='addphonenumber' name='addaddphonenumber' type='text'>
         </div>
         <div>
           <label for='addaddress'>Address</label>
@@ -21,12 +21,16 @@
         </div>
         <button type=submit class='btn-submit'>Submit</button>
       </form>
-      <p>List of Contacts:</p>
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
+      {% if contact is not empty %}
+        <p>List of Contacts:</p>
+        <ul>
+          {% for new_contact in contact %}
+          <li>{{ new_contact.getName }}</li>
+          <li>{{ new_contact.getPhoneNumber }}</li>
+          <li>{{ new_contact.getAddress }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
     </div>
     <div>
       <form action>
