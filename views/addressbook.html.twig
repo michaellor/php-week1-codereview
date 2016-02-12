@@ -4,9 +4,32 @@
   </head>
   <body>
     <h1>Address Book</h1>
+    <hr>
     <div>
-      <p>Add a contact <a href='/create_contact'>here</a>.</p>
-      <form>
+      <form action=>
+        <div>
+          <label for='addname'>Name:</label>
+          <input id='addname' name='addname' type='text'>
+        </div>
+        <div>
+          <label for='addphonenumber'>Phone Number:</label>
+          <input id='addphonenumber' name='addaddphonenumber' type='number'>
+        </div>
+        <div>
+          <label for='addaddress'>Address</label>
+          <input id='addaddress' name='addaddress' type='text'>
+        </div>
+        <button type=submit class='btn-submit'>Submit</button>
+      </form>
+      <p>List of Contacts:</p>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+    <div>
+      <form action>
         <button type='submit' class='button btn-danger'>Delete all contacts</button>
       </form>
     </div>

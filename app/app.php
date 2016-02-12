@@ -20,7 +20,8 @@
     });
 
     $app->post('/delete_contacts', function() use ($app) {
-
+        Contact::deleteAll();
+        return $app['twig']->render('deletecontact.html.twig');
     });
 
     return $app;
