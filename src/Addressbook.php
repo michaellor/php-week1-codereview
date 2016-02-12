@@ -1,6 +1,6 @@
 <?php
-    class Contact {
-
+    class Contact
+    {
         private $name;
         private $phone_number;
         private $address;
@@ -44,7 +44,7 @@
         }
         static function getAll()
         {
-            $_SESSION['list_of_contacts'];
+            return $_SESSION['list_of_contacts'];
         }
         static function deleteAll()
         {

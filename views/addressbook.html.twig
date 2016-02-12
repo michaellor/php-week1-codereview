@@ -5,37 +5,40 @@
   <body>
     <h1>Address Book</h1>
     <hr>
-    <div>
-      <form action=>
-        <div>
-          <label for='addname'>Name:</label>
-          <input id='addname' name='addname' type='text'>
-        </div>
-        <div>
-          <label for='addphonenumber'>Phone Number:</label>
-          <input id='addphonenumber' name='addaddphonenumber' type='text'>
-        </div>
-        <div>
-          <label for='addaddress'>Address</label>
-          <input id='addaddress' name='addaddress' type='text'>
-        </div>
-        <button type=submit class='btn-submit'>Submit</button>
-      </form>
-      {% if contact is not empty %}
-        <p>List of Contacts:</p>
-        <ul>
-          {% for new_contact in contact %}
-          <li>{{ new_contact.getName }}</li>
-          <li>{{ new_contact.getPhoneNumber }}</li>
-          <li>{{ new_contact.getAddress }}</li>
-          {% endfor %}
-        </ul>
+      {% if contacts is not empty %}
+      <h3>List of Contacts:</h3>
+      <ul>
+        {% for contact in contacts %}
+        <li><strong>Name</strong>: {{ contact.getName }}</li>
+        <li><strong>Phone Number</strong>: {{ contact.getPhoneNumber }}</li>
+        <li><strong>Address</strong>: {{ contact.getAddress }}</li>
+        <br>
+        {% endfor %}
+      </ul>
       {% endif %}
-    </div>
+
     <div>
-      <form action>
-        <button type='submit' class='button btn-danger'>Delete all contacts</button>
+      <h3>Add a Contact</h3>
+      <form action='/createcontact' method='post'>
+        <div>
+          <label for='name'>Name:</label>
+          <input id='name' name='name' type='text'>
+        </div>
+        <div>
+          <label for='phone_number'>Phone Number:</label>
+          <input id='phone_number' name='phone_number' type='text'>
+        </div>
+        <div>
+          <label for='address'>Address</label>
+          <input id='address' name='address' type='text'>
+        </div>
+        <button type='submit'>Submit</button>
       </form>
     </div>
+
+    <form action='/deletecontacts' method='post'>
+      <button type='submit'>Delete all contacts</button>
+    </form>
+
   </body>
 </html>
