@@ -15,10 +15,13 @@
         return $app['twig']->render('addressbook.html.twig');
     });
 
-    $app->get('/', function() use ($app) {
-        return ;
+    $app->get('/create_contact', function() use ($app) {
+        return $app['twig']->render('createcontact.html.twig');
     });
 
+    $app->post('/delete_contacts', function() use ($app) {
+
+    });
 
     return $app;
 
